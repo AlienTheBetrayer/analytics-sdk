@@ -2,22 +2,22 @@
 	"dependencies": {
 		"@alienthebetrayer/analytics-sdk-core": "^1.0.0"
 	},
+	"devDependencies": {
+		"@types/react": "^18",
+		"react": "^18"
+	},
 	"files": [
 		"dist"
 	],
 	"main": "dist/index.js",
 	"name": "@alienthebetrayer/analytics-sdk-react",
 	"peerDependencies": {
-		"react": "^19.2.3"
+		"react": "^18"
 	},
 	"scripts": {
 		"build": "tsc"
 	},
 	"sideEffects": false,
 	"types": "dist/index.d.ts",
-	"version": "1.0.0",
-	"devDependencies": {
-		"@types/react": "^19.2.7",
-		"react": "^19.2.3"
-	}
+	"version": "1.0.0"
 }
