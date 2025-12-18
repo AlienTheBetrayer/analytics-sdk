@@ -1,0 +1,19 @@
+{
+	"dependencies": {
+		"@alienthebetrayer/analytics-sdk-core": "^0.1.0"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"name": "@alienthebetrayer/analytics-sdk-react",
+	"peerDependencies": {
+		"react": ">=18"
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"sideEffects": false,
+	"types": "dist/index.d.ts",
+	"version": "0.1.0"
+}
