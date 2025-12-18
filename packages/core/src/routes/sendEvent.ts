@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_PATH } from "../globals/api";
 
 /**
  * Sends a new event to the analytics center.
@@ -13,9 +14,9 @@ export const sendEvent = async (
 	description?: string,
 ) => {
 	try {
-		return await axios.post("/api/analytics/send", {
-			projectName,
-			eventName,
+		return await axios.post(`${API_PATH}/api/analytics/send`, {
+			project_name: projectName,
+			event_name: eventName,
 			description,
 		});
 	} catch (error) {
