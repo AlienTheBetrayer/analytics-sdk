@@ -16,7 +16,7 @@ export const sendEvent = async (
 	try {
 		return await axios.post(`${API_PATH}/api/analytics/send`, {
 			project_name: projectName,
-			event_name: eventName,
+			event_type: eventName,
 			description,
 		});
 	} catch (error) {
