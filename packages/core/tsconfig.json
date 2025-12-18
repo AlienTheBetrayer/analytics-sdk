@@ -1,13 +1,15 @@
 {
 	"compilerOptions": {
 		"declaration": true,
-		"esModuleInterop": true,
-		"module": "CommonJS",
-		"outDir": "./dist",
-		"rootDir": "./src",
+		"declarationMap": true,
+		"emitDeclarationOnly": false,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"outDir": "dist",
+		"rootDir": "src",
+		"skipLibCheck": true,
 		"strict": true,
 		"target": "ES2020"
 	},
-	"exclude": ["node_modules", "dist"],
 	"include": ["src"]
 }

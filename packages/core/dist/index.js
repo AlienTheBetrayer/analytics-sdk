@@ -1,1 +1,1 @@
-"use strict";
+export { AnalyticsCore } from "./classes/core";
