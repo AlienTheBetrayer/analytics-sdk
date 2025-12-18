@@ -1,3 +1,6 @@
-import { send } from "./routes/send";
+export { AnalyticsCore } from "./classes/core";
 
-export * from './routes/send'
+export type {
+	AnalyticsCallbacks,
+	AnalyticsSettings,
+} from "./types/analyticsTypes";
