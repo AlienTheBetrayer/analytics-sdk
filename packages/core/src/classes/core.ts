@@ -13,6 +13,27 @@ export class AnalyticsCore {
 	private settings: AnalyticsSettings;
 
 	/**
+	 * Sets initial event cookies + page_view event.
+	 */
+	async init() {
+		if (this.settings.automaticEvents.page_view === true) {
+			const hasVisitedCookie = await cookieStore.get("hasVisited");
+
+			if (hasVisitedCookie === null) {
+				await cookieStore.set({
+					name: "hasVisited",
+					value: crypto.randomUUID(),
+					path: "/",
+					sameSite: "lax",
+					expires: Date.now() + 1000 * 60 * 10,
+				});
+
+				return this.send("page_view");
+			}
+		}
+	}
+
+	/**
 	 * Constructs the analytics wrapper object.
 	 * @param endpoint - The project name you are currently working from.
 	 * @param settings - (optional) settings for the core.
@@ -30,10 +51,7 @@ export class AnalyticsCore {
 		this.settings = settings;
 		this.callbacks = callbacks ?? {};
 
-		// page_view
-		if (this.settings.automaticEvents.page_view === true) {
-			this.send("page_view", "");
-		}
+		this.init();
 	}
 
 	/**

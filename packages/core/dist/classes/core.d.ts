@@ -4,6 +4,10 @@ export declare class AnalyticsCore {
     private callbacks;
     private settings;
     /**
+     * Sets initial event cookies + page_view event.
+     */
+    init(): Promise<import("axios").AxiosResponse<any, any, {}> | undefined>;
+    /**
      * Constructs the analytics wrapper object.
      * @param endpoint - The project name you are currently working from.
      * @param settings - (optional) settings for the core.
